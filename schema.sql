@@ -1,0 +1,15 @@
+CREATE DATABASE DB;
+USE DB;
+CREATE TABLE Users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    order_date DATETIME,
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
